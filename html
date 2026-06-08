@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mira Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <h2 class="logo">Mira<span>Portfolio</span></h2>
+            <ul class="nav-links">
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero fade-in">
+            <div class="intro-box">
+                <p class="greeting">Hello, traveler!</p>
+                <h1>Mira Salise</h1>
+                <h2>A BSIT student building my way into game development and web design.</h2>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn">View My Work</a>
+                </div>
+            </div>
+
+            <div class="picture-box">
+                <div class="profile-frame">
+                    <img src="Miracle.jpg" alt="Mira Salise" class="profile-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    
+                </div>
+                <p>This is me!</p>
+            </div>
+        </section>
+
+        <section id="about" class="section-container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-card">
+                <p>
+                    I am Mira, an 18-year-old IT student at <strong>Agusan del Sur State University</strong>. 
+                    I am incredibly passionate about gaming, reading, and software design. 
+                    My ultimate dream is to channel this creativity into creating my very own immersive games someday.
+                </p>
+            </div>
+        </section>
+
+        <section id="projects" class="section-container">
+            <h2 class="section-title">Projects</h2>
+            <div class="project-container">
+                
+                <div class="project-card">
+                    <div class="project-status-badge">Completed</div>
+                    <h3>Fast Food Ordering System</h3>
+                    <p>An intuitive system built to resolve manual workflow problems in traditional fast food restaurants. It automates calculations, streamlines menu selection, and eliminates long queue processing bottlenecks.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <section id="contact" class="section-container">
+            <h2 class="section-title">Let's Connect!</h2>
+            <div class="contact-grid">
+                <a href="mailto:msalise79@adssu.edu.ph" class="contact-item">
+                    <i data-lucide="mail"></i>
+                    <span class="text">msalise79@adssu.edu.ph</span>
+                </a>
+                <a href="https://github.com/pineapplekirara" target="_blank" rel="noopener" class="contact-item">
+                    <i data-lucide="github"></i>
+                    <span class="text">github.com/pineapplekirara</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Mira Portfolio. All rights reserved.</p>
+    </footer>
+
+    <script>
+      lucide.createIcons();
+    </script>
+</body>
+</html>
