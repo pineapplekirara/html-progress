@@ -1,0 +1,430 @@
+/* --- GOOGLE FONTS & CONSTANTS --- */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Quicksand:wght@500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    /* Clean gradient mixing your soft base background with subtle shifts */
+    background: linear-gradient(180deg, #fff0f6 0%, #fff7f9 100%);
+    color: #5c4a52;
+    line-height: 1.6;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+section {
+    padding: 100px 8%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* --- MODERN GLASS NAVIGATION --- */
+.navbar {
+    background-color: rgba(255, 240, 246, 0.8);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 105, 166, 0.1);
+}
+
+.logo {
+    font-family: 'Fredoka', sans-serif;
+    color: #ff69a6;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.logo span {
+    color: #5c4a52;
+    font-weight: 400;
+}
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #5c4a52;
+    font-weight: 700;
+    font-size: 15px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Elegant underline slide effect on hover */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #ff69a6;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.nav-links a:hover {
+    color: #ff69a6;
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* --- ASYMMETRIC HERO SECTION --- */
+.hero {
+    min-height: 80vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    padding-top: 60px;
+}
+
+.intro-box {
+    flex: 1;
+    min-width: 300px;
+    text-align: left; /* Shifted from center to a clean left alignment */
+}
+
+.greeting {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ff69a6;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.intro-box h1 {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 58px;
+    color: #5c4a52;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+/* Highlighted first name using your signature pink */
+.intro-box h1::first-line {
+    color: #ff69a6;
+}
+
+.intro-box h2 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #7d6571;
+    margin-bottom: 35px;
+    max-width: 480px;
+}
+
+/* Premium Rounded Button */
+.btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff69a6 0%, #ff85b8 100%);
+    color: white;
+    text-decoration: none;
+    padding: 14px 36px;
+    border-radius: 16px;
+    font-weight: 700;
+    box-shadow: 0 8px 24px rgba(255, 105, 166, 0.25);
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(255, 105, 166, 0.4);
+}
+
+/* --- FIXED NEW PROFILE FRAME BLOCK --- */
+.picture-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-frame {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    border-radius: 40px; /* Squircle design instead of generic circles */
+    overflow: hidden; /* Important: clips image to match the rounded corners */
+    background: #ffd6e7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 20px 40px rgba(92, 74, 82, 0.08);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.profile-frame:hover {
+    transform: translateY(-8px) rotate(2deg);
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures your photo crops perfectly without stretching */
+    object-position: center; /* Centers portrait focus points */
+    border-radius: 40px;
+    border: 4px solid #ffd6e7;
+}
+
+/* Fallback framework element if img fails to resolve */
+.profile-frame .no-picture {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: none;
+    background: #ffd6e7;
+}
+
+/* Modern Geometric CSS Heart Accent */
+.heart-icon {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    background-color: #ff69a6;
+    transform: rotate(-45deg);
+    margin-bottom: 20px;
+    animation: heartPulse 2.5s infinite ease-in-out;
+}
+
+.heart-icon::before,
+.heart-icon::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: #ff69a6;
+    border-radius: 50%;
+}
+
+.heart-icon::before { top: -8px; left: 0; }
+.heart-icon::after { top: 0; left: 8px; }
+
+.picture-box p {
+    margin-top: 20px;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #7d6571;
+    text-transform: uppercase;
+}
+
+/* --- LUXURIOUS CONTAINERS & TYPOGRAPHY --- */
+.section-title {
+    font-family: 'Fredoka', sans-serif;
+    text-align: center;
+    margin-bottom: 60px;
+    color: #5c4a52;
+    font-size: 36px;
+    position: relative;
+}
+
+/* Minimalist title accent line instead of standard blocks */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 4px;
+    background-color: #ff69a6;
+    border-radius: 2px;
+    margin: 12px auto 0 auto;
+}
+
+/* Crisp White Velvet Cards */
+.about-card {
+    background-color: white;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 50px 40px;
+    border-radius: 32px;
+    text-align: center;
+    font-size: 18px;
+    color: #5c4a52;
+    box-shadow: 0 15px 35px rgba(255, 105, 166, 0.04), 0 5px 15px rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(255, 214, 231, 0.5);
+}
+
+.about-card strong {
+    color: #ff69a6;
+    font-weight: 700;
+}
+
+/* --- MINIMALIST PROJECT CARDS --- */
+.project-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.project-card {
+    background-color: white;
+    width: 380px;
+    max-width: 100%;
+    padding: 45px 35px;
+    border-radius: 32px;
+    position: relative;
+    box-shadow: 0 15px 35px rgba(255, 105, 166, 0.04);
+    border: 1px solid rgba(255, 214, 231, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(255, 105, 166, 0.1);
+}
+
+.project-status-badge {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    background-color: #fff0f6;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #ff69a6;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.project-card h3 {
+    font-family: 'Fredoka', sans-serif;
+    color: #5c4a52;
+    margin: 15px 0 10px 0;
+    font-size: 24px;
+}
+
+.project-card p {
+    color: #7d6571;
+    font-size: 15px;
+}
+
+.project-tags {
+    display: flex;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.project-tags span {
+    background-color: #fff0f6;
+    padding: 5px 14px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #ff69a6;
+}
+
+/* --- CONTACT PILLS MAP --- */
+.contact-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.contact-item {
+    background-color: white;
+    text-decoration: none;
+    padding: 18px 35px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 10px 25px rgba(92, 74, 82, 0.03);
+    color: #5c4a52;
+    font-weight: 700;
+    border: 1px solid rgba(255, 214, 231, 0.3);
+    transition: all 0.3s ease;
+}
+
+.contact-item svg {
+    color: #ff69a6;
+    width: 22px;
+    height: 22px;
+}
+
+.contact-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(255, 105, 166, 0.15);
+    color: #ff69a6;
+    border-color: rgba(255, 105, 166, 0.3);
+}
+
+/* --- FOOTER --- */
+footer {
+    margin-top: 120px;
+    background-color: white;
+    text-align: center;
+    padding: 35px;
+    font-weight: 700;
+    color: #7d6571;
+    font-size: 14px;
+    border-top: 1px solid rgba(255, 214, 231, 0.5);
+}
+
+/* --- RENDERING ANIMATIONS --- */
+.fade-in {
+    animation: smoothLoader 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes smoothLoader {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heartPulse {
+    0%, 100% { transform: rotate(-45deg) scale(1); }
+    50% { transform: rotate(-45deg) scale(1.15); }
+}
+
+/* --- VIEWPORT RESPONSIVENESS --- */
+@media (max-width: 900px) {
+    section { padding: 70px 6%; }
+    .hero { flex-direction: column; text-align: center; gap: 50px; }
+    .intro-box { text-align: center; }
+    .intro-box h2 { margin-left: auto; margin-right: auto; }
+}
+
+@media (max-width: 600px) {
+    .navbar { padding: 20px 6%; }
+    .nav-links { gap: 20px; }
+    .intro-box h1 { font-size: 42px; }
+    .profile-frame { width: 250px; height: 250px; border-radius: 32px; }
+    .profile-image { border-radius: 32px; }
+    .about-card, .project-card { padding: 35px 20px; }
+}
